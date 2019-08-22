@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cong tac va bong den</title>
+</head>
+<body>
+    <script>
+        function Remote() {
+            this.number;
+            this.upVolume=function (tivi) {
+                if (tivi.volume<100 && tivi.isOn==true) {
+                    tivi.volume++;
+                }
+            };
+            this.downVolume=function (tivi) {
+                if (tivi.volume>0 && tivi.isOn==trưe) {
+                    tivi.volume--;
+                }
+            };
+            this.setSwtichTV=function (tivi,number) {
+                if (tivi.isOn==true) {
+                    tivi.switch = number;
+                }
+            };
+            this.turnOnTv=function (tivi) {
+                tivi.isOn=true;
+            };
+            this.turnOffTv=function (tivi) {
+                tivi.isOn=false;
+            }
+        }
+
+
+        function Tivi() {
+            this.switch='';
+            this.volume=0;
+            this.isOn=false;
+            this.getVolume=function () {
+                return this.volume;
+            };
+            this.getSwitch=function () {
+                return this.switch;
+            }
+
+        }
+
+
+        let remote=new Remote();
+        let tivi1=new Tivi();
+        remote.turnOnTv(tivi1);
+        tivi1.switch='vtv1';
+         console.log('tivi đang ở kênh ' +tivi1.switch);
+         console.log('volume hiện tại là '+tivi1.volume);
+        remote.upVolume(tivi1);
+        console.log("volun hiện tại là "+tivi1.volume);
+       remote.setSwtichTV(tivi1,'vtv7');
+       console.log('kênh hiện tại là '+tivi1.switch);
+
+    </script>
+</body>
+</html>
